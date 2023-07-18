@@ -1,0 +1,136 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.headerContainer {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+}
+
+.upload {
+  line-height: 21px;
+  letter-spacing: 0.03px;
+}
+
+.uploadContainer {
+  border: 1px solid rgba(22, 24, 35, 0.12);
+}
+
+.rotated {
+  animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.tiktok-loader {
+  width: 60px;
+  height: 20px;
+  position: relative;
+}
+
+.tiktok-loader::before,
+.tiktok-loader::after {
+  position: absolute;
+  content: "";
+  top: 6px;
+  background-color: #ff3e9e;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  animation: tiktok-loader-anim 1s linear infinite;
+}
+
+.tiktok-loader::after {
+  background-color: #4de8f4;
+  animation-delay: 0.5s;
+}
+
+@keyframes tiktok-loader-anim {
+  0%,
+  100% {
+    top: 6px;
+    left: 0px;
+    width: 28px;
+    height: 28px;
+    z-index: 0;
+  }
+
+  25% {
+    top: 0px;
+    height: 40px;
+    width: 40px;
+    z-index: 1;
+    left: 20px;
+  }
+
+  50% {
+    top: 6px;
+    width: 28px;
+    height: 28px;
+    left: 48px;
+  }
+
+  75% {
+    top: 8px;
+    width: 28px;
+    height: 28px;
+    left: 26px;
+  }
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  animation-delay: 4s;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #7ac142;
+  }
+}
